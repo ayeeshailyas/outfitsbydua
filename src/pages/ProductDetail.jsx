@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { getProductById, getRelatedProducts } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
-import { buildWhatsAppLink } from "../config";
+import { BRAND_NAME, buildWhatsAppLink } from "../config";
 import ProductCard from "../components/ProductCard";
 
 export default function ProductDetail() {
@@ -40,7 +40,7 @@ export default function ProductDetail() {
     setTimeout(() => setAdded(false), 2000);
   };
 
-  const whatsappMessage = `Hi Futsbydua! I'm interested in the ${product.name} (${color}${size ? `, size ${size}` : ""}) — $${displayPrice}. Is it available?`;
+  const whatsappMessage = `Hi ${BRAND_NAME}! I'm interested in the ${product.name} (${color}${size ? `, size ${size}` : ""}) — $${displayPrice}. Is it available?`;
 
   return (
     <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-14">

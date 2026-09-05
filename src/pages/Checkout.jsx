@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import { buildWhatsAppLink, FREE_SHIPPING_THRESHOLD } from "../config";
+import { BRAND_NAME, buildWhatsAppLink, FREE_SHIPPING_THRESHOLD } from "../config";
 
 export default function Checkout() {
   const { items, subtotal, clearCart } = useCart();
@@ -19,7 +19,7 @@ export default function Checkout() {
       (i) => `• ${i.name} (${i.color}${i.size ? ` / ${i.size}` : ""}) x${i.qty} — $${(i.price * i.qty).toFixed(0)}`
     );
     return [
-      `Hi Futsbydua! I'd like to place an order:`,
+      `Hi ${BRAND_NAME}! I'd like to place an order:`,
       ``,
       ...lines,
       ``,

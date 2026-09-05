@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { buildWhatsAppLink } from "../config";
+import { BRAND_NAME, buildWhatsAppLink } from "../config";
 
 export default function WhatsAppFloat() {
-  const link = buildWhatsAppLink("Hi Futsbydua! I'd like to ask about your collection.");
+  const link = buildWhatsAppLink(`Hi ${BRAND_NAME}! I'd like to ask about your collection.`);
 
   return (
     <motion.a

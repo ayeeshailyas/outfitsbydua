@@ -1,5 +1,6 @@
 // Update this with the brand's real WhatsApp Business number,
 // in international format without symbols, e.g. "923001234567".
+export const BRAND_NAME = "Outfits by Dua";
 export const WHATSAPP_NUMBER = "923366605533";
 
 export const FREE_SHIPPING_THRESHOLD = 900;
