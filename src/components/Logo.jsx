@@ -12,7 +12,7 @@ export default function Logo({ className = "", light = false }) {
           fontSize: "1.4em",
         }}
       >
-        FUTS
+        OUTFITS
       </span>
       <span
         className={`font-logo-italic italic ${sub}`}
@@ -22,7 +22,7 @@ export default function Logo({ className = "", light = false }) {
           fontSize: "0.95em",
         }}
       >
-        bydua
+        byduaJP
       </span>
     </span>
   );
