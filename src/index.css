@@ -67,6 +67,11 @@ body {
     -webkit-backdrop-filter: blur(16px);
   }
 
+  .mobile-menu-panel {
+    background-color: #f9f9f9;
+    isolation: isolate;
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

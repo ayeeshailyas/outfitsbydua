@@ -15,7 +15,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-surface-container-low border-t border-outline-variant/60 mt-section-gap-mobile md:mt-section-gap">
+    <footer className="bg-surface-container-low border-t border-outline-variant/60">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div>
           <Logo className="text-lg" />

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
@@ -28,6 +29,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const closeMenuOnDesktop = () => {
+      if (window.innerWidth >= 1024) setMobileOpen(false);
+    };
+
+    window.addEventListener("resize", closeMenuOnDesktop);
+    return () => window.removeEventListener("resize", closeMenuOnDesktop);
+  }, []);
+
   const submitSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {
@@ -46,7 +56,7 @@ export default function Header() {
       <div className="max-w-container-max mx-auto flex items-center justify-between px-margin-mobile md:px-margin-desktop h-[76px]">
         {/* Mobile menu trigger */}
         <button
-          className="md:hidden flex flex-col justify-center items-center w-9 h-9 -ml-2"
+          className="lg:hidden flex flex-col justify-center items-center w-9 h-9 -ml-2"
           aria-label="Open menu"
           onClick={() => setMobileOpen(true)}
         >
@@ -54,11 +64,11 @@ export default function Header() {
           <span className="block w-5 h-px bg-on-surface" />
         </button>
 
-        <Link to="/" className="md:mr-8">
+        <Link to="/" className="lg:mr-8">
           <Logo className="text-xl" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-9">
+        <nav className="hidden lg:flex items-center gap-9">
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}
@@ -135,49 +145,51 @@ export default function Header() {
         )}
       </AnimatePresence>
 
-      {/* Mobile menu drawer */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-inverse-surface/40 z-40"
-              onClick={() => setMobileOpen(false)}
-            />
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ duration: 0.4, ease: [0.65, 0, 0.35, 1] }}
-              className="fixed top-0 left-0 bottom-0 w-[82%] max-w-sm bg-surface-container-lowest z-50 flex flex-col px-margin-mobile py-6"
-            >
-              <div className="flex items-center justify-between mb-10">
-                <Logo />
-                <button aria-label="Close menu" onClick={() => setMobileOpen(false)} className="w-9 h-9 flex items-center justify-center">
-                  <IconClose />
-                </button>
-              </div>
-              <nav className="flex flex-col gap-1">
-                {NAV_LINKS.map((link) => (
-                  <NavLink
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setMobileOpen(false)}
-                    className="font-display text-headline-md py-3 border-b border-outline-variant/60 text-on-surface"
-                  >
-                    {link.label}
-                  </NavLink>
-                ))}
-              </nav>
-              <div className="mt-auto text-label-caps uppercase text-on-surface-variant pt-8">
-                Curated silhouettes for the discerning collector.
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+      {typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
+          {mobileOpen && (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+                onClick={() => setMobileOpen(false)}
+              />
+              <motion.div
+                initial={{ x: "-100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "-100%" }}
+                transition={{ duration: 0.4, ease: [0.65, 0, 0.35, 1] }}
+                className="mobile-menu-panel fixed top-0 left-0 bottom-0 w-[82%] max-w-sm z-50 flex flex-col px-margin-mobile py-6 shadow-elevated lg:hidden"
+              >
+                <div className="flex items-center justify-between mb-10">
+                  <Logo />
+                  <button aria-label="Close menu" onClick={() => setMobileOpen(false)} className="w-9 h-9 flex items-center justify-center">
+                    <IconClose />
+                  </button>
+                </div>
+                <nav className="flex flex-col gap-1">
+                  {NAV_LINKS.map((link) => (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setMobileOpen(false)}
+                      className="font-display text-headline-md py-3 border-b border-outline-variant/60 text-on-surface"
+                    >
+                      {link.label}
+                    </NavLink>
+                  ))}
+                </nav>
+                <div className="mt-auto text-label-caps uppercase text-on-surface-variant pt-8">
+                  Curated silhouettes for the discerning collector.
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>,
+        document.body,
+      )}
     </header>
   );
 }

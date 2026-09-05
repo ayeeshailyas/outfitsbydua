@@ -25,9 +25,9 @@ export default function Home() {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.6, ease: [0.25, 1, 0.5, 1] }}
-          src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=1800&h=1400&q=80"
+          src="/images/hero-fashion.jpeg"
           alt="Futsbydua Summer Collection"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[center_18%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/30 via-transparent to-transparent" />
         <div className="relative h-full flex flex-col items-center justify-center text-center px-margin-mobile">
@@ -141,22 +141,36 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-gutter mt-10">
-          <div className="rounded-sm overflow-hidden aspect-[4/3] sm:aspect-auto sm:row-span-2">
+          <div className="rounded-sm overflow-hidden aspect-[4/3] sm:aspect-square">
             <img
               src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&h=1200&q=80"
               alt="Lookbook editorial"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="grid grid-cols-2 gap-gutter">
-            <div className="rounded-sm overflow-hidden aspect-square">
+          <div className="grid grid-cols-2 grid-rows-2 gap-gutter aspect-[4/3] sm:aspect-square">
+            <div className="rounded-sm overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=600&h=600&q=80"
                 alt="Detail shot"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-sm overflow-hidden aspect-square">
+            <div className="rounded-sm overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=600&h=600&q=80"
+                alt="Accessory detail"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-sm overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=600&h=600&q=80"
+                alt="Detail shot"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-sm overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=600&h=600&q=80"
                 alt="Accessory detail"
@@ -166,9 +180,6 @@ export default function Home() {
           </div>
         </div>
 
-        <Link to="/women" className="inline-block mt-10 text-label-caps uppercase border-b border-on-surface pb-1">
-          Explore the Journal
-        </Link>
       </motion.section>
 
       {/* Newsletter CTA */}
@@ -177,24 +188,24 @@ export default function Home() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-80px" }}
-        className="mt-20 md:mt-32 bg-secondary-container"
+        className="mt-20 md:mt-32 bg-secondary text-on-secondary"
       >
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 text-center">
-          <h2 className="font-display text-headline-md md:text-3xl text-on-secondary-container">Join the Inner Circle</h2>
-          <p className="font-body text-body-md text-on-secondary-container/80 max-w-md mx-auto mt-3">
+          <h2 className="font-display text-headline-md md:text-3xl">Join the Inner Circle</h2>
+          <p className="font-body text-body-md text-on-secondary/80 max-w-md mx-auto mt-3">
             Subscribe for early access to new collections, exclusive events, and curated editorial content.
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex items-center justify-center gap-3 max-w-sm mx-auto mt-8 border-b border-on-secondary-container/40 focus-within:border-on-secondary-container transition-colors"
+            className="flex items-center justify-center gap-3 max-w-sm mx-auto mt-8 border-b border-on-secondary/40 focus-within:border-on-secondary transition-colors"
           >
             <input
               type="email"
               required
               placeholder="Email Address"
-              className="flex-1 bg-transparent outline-none py-2 font-body text-body-md placeholder:text-on-secondary-container/60 text-on-secondary-container"
+              className="flex-1 bg-transparent outline-none py-2 font-body text-body-md placeholder:text-on-secondary/60"
             />
-            <button type="submit" aria-label="Subscribe" className="text-on-secondary-container">→</button>
+            <button type="submit" aria-label="Subscribe" className="text-on-secondary">→</button>
           </form>
         </div>
       </motion.section>
