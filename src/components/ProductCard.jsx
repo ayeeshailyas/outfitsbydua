@@ -15,14 +15,6 @@ export default function ProductCard({ product }) {
             loading="lazy"
             className="w-full h-full object-cover"
           />
-          {product.images[1] && (
-            <img
-              src={product.images[1]}
-              alt=""
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            />
-          )}
         </Link>
 
         {product.isNew && (

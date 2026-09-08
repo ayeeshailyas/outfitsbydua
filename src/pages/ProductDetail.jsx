@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { getProductById, getRelatedProducts } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
@@ -14,7 +13,6 @@ export default function ProductDetail() {
   const { addItem } = useCart();
   const { isWishlisted, toggleWishlist } = useWishlist();
 
-  const [activeImage, setActiveImage] = useState(0);
   const [size, setSize] = useState(product?.sizes?.[0]);
   const [added, setAdded] = useState(false);
 
@@ -51,31 +49,12 @@ export default function ProductDetail() {
         {/* Gallery */}
         <div>
           <div className="rounded-sm overflow-hidden bg-surface-container-low aspect-[4/5]">
-            <motion.img
-              key={activeImage}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4 }}
-              src={product.images[activeImage]}
+            <img
+              src={product.images[0]}
               alt={product.name}
               className="w-full h-full object-cover"
             />
           </div>
-          {product.images.length > 1 && (
-            <div className="flex gap-3 mt-4">
-              {product.images.map((img, i) => (
-                <button
-                  key={img}
-                  onClick={() => setActiveImage(i)}
-                  className={`w-20 h-24 rounded-sm overflow-hidden border ${
-                    activeImage === i ? "border-on-surface" : "border-transparent"
-                  }`}
-                >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </button>
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Info */}

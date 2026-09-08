@@ -82,13 +82,13 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
           {[
-            { to: "/women-wear", label: "Women Wear", img: "photo-1483985988355-763728e1935b" },
-            { to: "/jewellary", label: "Jewellary", img: "photo-1611085583191-a3b181a88401" },
-            { to: "/handbags", label: "Handbags", img: "photo-1584917865442-de89df76afd3" },
+            { to: "/women-wear", label: "Women Wear", img: "/images/wear/wear_category.jpeg" },
+            { to: "/jewellary", label: "Jewellary", img: "/images/jewellary/catagory.jpeg" },
+            { to: "/handbags", label: "Handbags", img: "/images/bags/bag_category.jpeg" },
           ].map((c) => (
             <Link key={c.to} to={c.to} className="relative img-hover-zoom rounded-sm aspect-[4/5] block">
               <img
-                src={`https://images.unsplash.com/${c.img}?auto=format&fit=crop&w=700&h=875&q=80`}
+                src={c.img}
                 alt={c.label}
                 className="w-full h-full object-cover"
               />
@@ -143,7 +143,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-gutter mt-10">
           <div className="rounded-sm overflow-hidden aspect-[4/3] sm:aspect-square">
             <img
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&h=1200&q=80"
+              src="/images/hero-fashion.jpeg"
               alt="Lookbook editorial"
               className="w-full h-full object-cover"
             />
@@ -151,28 +151,28 @@ export default function Home() {
           <div className="grid grid-cols-2 grid-rows-2 gap-gutter aspect-[4/3] sm:aspect-square">
             <div className="rounded-sm overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=600&h=600&q=80"
+                src="/images/hero-fashion1.jpeg"
                 alt="Detail shot"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="rounded-sm overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=600&h=600&q=80"
+                src="/images/hero-fashion.jpeg"
                 alt="Accessory detail"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="rounded-sm overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=600&h=600&q=80"
+                src="/images/hero-fashion1.jpeg"
                 alt="Detail shot"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="rounded-sm overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=600&h=600&q=80"
+                src="/images/hero-fashion.jpeg"
                 alt="Accessory detail"
                 className="w-full h-full object-cover"
               />
