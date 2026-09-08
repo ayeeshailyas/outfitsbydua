@@ -5,9 +5,9 @@ const img = (id, w = 800, h = 1000) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 
 export const CATEGORIES = [
-  { slug: "women", label: "Women" },
-  { slug: "men", label: "Men" },
-  { slug: "kids", label: "Kids" },
+  { slug: "women-wear", label: "Women Wear" },
+  { slug: "jewellary", label: "Jewellary" },
+  { slug: "handbags", label: "Handbags" },
 ];
 
 export const AGE_GROUPS = [
@@ -22,7 +22,7 @@ export const products = [
   {
     id: "w-01",
     name: "Tailored Linen Blazer",
-    category: "women",
+    category: "women-wear",
     subcategory: "Outerwear",
     ageGroup: "adult",
     price: 325,
@@ -38,7 +38,7 @@ export const products = [
   {
     id: "w-02",
     name: "Oversized Cashmere Crew",
-    category: "women",
+    category: "women-wear",
     subcategory: "Knitwear",
     ageGroup: "adult",
     price: 450,
@@ -54,7 +54,7 @@ export const products = [
   {
     id: "w-03",
     name: "Bias-Cut Silk Slip",
-    category: "women",
+    category: "women-wear",
     subcategory: "Dresses",
     ageGroup: "adult",
     price: 295,
@@ -71,7 +71,7 @@ export const products = [
   {
     id: "w-04",
     name: "High-Waisted Wool Trouser",
-    category: "women",
+    category: "women-wear",
     subcategory: "Trousers",
     ageGroup: "adult",
     price: 380,
@@ -87,7 +87,7 @@ export const products = [
   {
     id: "w-05",
     name: "Structured Leather Tote",
-    category: "women",
+    category: "women-wear",
     subcategory: "Accessories",
     ageGroup: "adult",
     price: 695,
@@ -103,7 +103,7 @@ export const products = [
   {
     id: "w-06",
     name: "Aura Strappy Sandal",
-    category: "women",
+    category: "women-wear",
     subcategory: "Footwear",
     ageGroup: "adult",
     price: 260,
@@ -119,7 +119,7 @@ export const products = [
   {
     id: "w-07",
     name: "Pleated Midi Skirt",
-    category: "women",
+    category: "women-wear",
     subcategory: "Skirts",
     ageGroup: "adult",
     price: 210,
@@ -136,7 +136,7 @@ export const products = [
   {
     id: "w-08",
     name: "Fluid Linen Trouser",
-    category: "women",
+    category: "women-wear",
     subcategory: "Trousers",
     ageGroup: "adult",
     price: 225,
@@ -154,7 +154,7 @@ export const products = [
   {
     id: "m-01",
     name: "Structured Wool Suit",
-    category: "men",
+    category: "jewellary",
     subcategory: "Tailoring",
     ageGroup: "adult",
     price: 890,
@@ -170,7 +170,7 @@ export const products = [
   {
     id: "m-02",
     name: "Oversized Poplin Shirt",
-    category: "men",
+    category: "jewellary",
     subcategory: "Shirts",
     ageGroup: "adult",
     price: 165,
@@ -186,7 +186,7 @@ export const products = [
   {
     id: "m-03",
     name: "Merino Half-Zip Knit",
-    category: "men",
+    category: "jewellary",
     subcategory: "Knitwear",
     ageGroup: "adult",
     price: 245,
@@ -202,7 +202,7 @@ export const products = [
   {
     id: "m-04",
     name: "Tapered Chino Trouser",
-    category: "men",
+    category: "jewellary",
     subcategory: "Trousers",
     ageGroup: "adult",
     price: 175,
@@ -219,7 +219,7 @@ export const products = [
   {
     id: "m-05",
     name: "Full-Grain Leather Belt",
-    category: "men",
+    category: "jewellary",
     subcategory: "Accessories",
     ageGroup: "adult",
     price: 120,
@@ -235,7 +235,7 @@ export const products = [
   {
     id: "m-06",
     name: "Minimal Leather Sneaker",
-    category: "men",
+    category: "jewellary",
     subcategory: "Footwear",
     ageGroup: "adult",
     price: 285,
@@ -251,7 +251,7 @@ export const products = [
   {
     id: "m-07",
     name: "Wool-Blend Overcoat",
-    category: "men",
+    category: "jewellary",
     subcategory: "Outerwear",
     ageGroup: "adult",
     price: 620,
@@ -267,7 +267,7 @@ export const products = [
   {
     id: "m-08",
     name: "Pleated Wool Trouser",
-    category: "men",
+    category: "jewellary",
     subcategory: "Trousers",
     ageGroup: "adult",
     price: 350,
@@ -285,7 +285,7 @@ export const products = [
   {
     id: "k-01",
     name: "Organic Cotton Knit Sweater",
-    category: "kids",
+    category: "handbags",
     subcategory: "Knitwear",
     ageGroup: "3-7",
     price: 78,
@@ -301,7 +301,7 @@ export const products = [
   {
     id: "k-02",
     name: "Little Explorer Overshirt",
-    category: "kids",
+    category: "handbags",
     subcategory: "Shirts",
     ageGroup: "3-7",
     price: 65,
@@ -317,7 +317,7 @@ export const products = [
   {
     id: "k-03",
     name: "Cosy Fleece Romper",
-    category: "kids",
+    category: "handbags",
     subcategory: "Rompers",
     ageGroup: "0-2",
     price: 55,
@@ -333,7 +333,7 @@ export const products = [
   {
     id: "k-04",
     name: "Corduroy Pull-On Trouser",
-    category: "kids",
+    category: "handbags",
     subcategory: "Trousers",
     ageGroup: "8-14",
     price: 68,
@@ -350,7 +350,7 @@ export const products = [
   {
     id: "k-05",
     name: "Canvas High-Top Sneaker",
-    category: "kids",
+    category: "handbags",
     subcategory: "Footwear",
     ageGroup: "8-14",
     price: 72,
@@ -366,7 +366,7 @@ export const products = [
   {
     id: "k-06",
     name: "Quilted Puffer Jacket",
-    category: "kids",
+    category: "handbags",
     subcategory: "Outerwear",
     ageGroup: "3-7",
     price: 98,

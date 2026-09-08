@@ -6,17 +6,17 @@ import ProductCard from "../components/ProductCard";
 import Filters from "../components/Filters";
 
 const TITLES = {
-  women: {
-    title: "Women's Collection",
+  "women-wear": {
+    title: "Women Wear",
     tagline: "Discover our curated selection of effortless, timeless pieces designed for the modern woman.",
   },
-  men: {
-    title: "Men's Collection",
-    tagline: "Considered tailoring and everyday staples, built with quiet confidence.",
+  jewellary: {
+    title: "Jewellary",
+    tagline: "Considered pieces and everyday staples, selected with quiet confidence.",
   },
-  kids: {
-    title: "Kids' Collection",
-    tagline: "Soft fabrics and durable cuts, made for play and everything in between.",
+  handbags: {
+    title: "Handbags",
+    tagline: "Practical forms and considered details for every part of your day.",
   },
   "new-arrivals": {
     title: "New Arrivals",
@@ -31,7 +31,7 @@ const TITLES = {
 export default function CategoryPage({ mode }) {
   const { category } = useParams();
   const activeCategory = mode || category;
-  const meta = TITLES[activeCategory] || TITLES.women;
+  const meta = TITLES[activeCategory] || TITLES["women-wear"];
 
   const baseProducts = useMemo(() => {
     if (activeCategory === "new-arrivals") return ALL_PRODUCTS.filter((p) => p.isNew);

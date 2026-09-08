@@ -37,9 +37,9 @@ export default function Footer() {
         <div>
           <h4 className="text-label-caps uppercase text-on-surface-variant mb-4">Shop</h4>
           <ul className="flex flex-col gap-3 font-body text-body-md">
-            <li><Link to="/women" className="fade-underline">Women</Link></li>
-            <li><Link to="/men" className="fade-underline">Men</Link></li>
-            <li><Link to="/kids" className="fade-underline">Kids</Link></li>
+            <li><Link to="/women-wear" className="fade-underline">Women Wear</Link></li>
+            <li><Link to="/jewellary" className="fade-underline">Jewellary</Link></li>
+            <li><Link to="/handbags" className="fade-underline">Handbags</Link></li>
             <li><Link to="/sale" className="fade-underline">Sale</Link></li>
           </ul>
         </div>

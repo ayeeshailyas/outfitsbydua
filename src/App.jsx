@@ -37,9 +37,9 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-        <Route path="/women" element={<PageTransition><CategoryPage mode="women" /></PageTransition>} />
-        <Route path="/men" element={<PageTransition><CategoryPage mode="men" /></PageTransition>} />
-        <Route path="/kids" element={<PageTransition><CategoryPage mode="kids" /></PageTransition>} />
+        <Route path="/women-wear" element={<PageTransition><CategoryPage mode="women-wear" /></PageTransition>} />
+        <Route path="/jewellary" element={<PageTransition><CategoryPage mode="jewellary" /></PageTransition>} />
+        <Route path="/handbags" element={<PageTransition><CategoryPage mode="handbags" /></PageTransition>} />
         <Route path="/new-arrivals" element={<PageTransition><CategoryPage mode="new-arrivals" /></PageTransition>} />
         <Route path="/sale" element={<PageTransition><CategoryPage mode="sale" /></PageTransition>} />
         <Route path="/product/:id" element={<PageTransition><ProductDetail /></PageTransition>} />

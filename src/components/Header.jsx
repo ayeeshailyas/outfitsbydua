@@ -7,9 +7,9 @@ import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 
 const NAV_LINKS = [
-  { to: "/women", label: "Women" },
-  { to: "/men", label: "Men" },
-  { to: "/kids", label: "Kids" },
+  { to: "/women-wear", label: "Women Wear" },
+  { to: "/jewellary", label: "Jewellary" },
+  { to: "/handbags", label: "Handbags" },
   { to: "/new-arrivals", label: "New Arrivals" },
   { to: "/sale", label: "Sale" },
 ];

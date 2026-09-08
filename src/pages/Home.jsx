@@ -53,7 +53,7 @@ export default function Home() {
             transition={{ delay: 0.75, duration: 0.6 }}
           >
             <Link
-              to="/women"
+              to="/women-wear"
               className="inline-block mt-8 bg-secondary text-on-secondary rounded-full px-8 py-4 text-label-caps uppercase hover:bg-on-secondary hover:text-secondary transition-colors duration-300"
             >
               Shop Collection
@@ -75,16 +75,16 @@ export default function Home() {
             <h2 className="font-display text-headline-md md:text-3xl">Explore by Category</h2>
             <p className="font-body text-body-md text-on-surface-variant mt-1">Curated essentials for every wardrobe.</p>
           </div>
-          <Link to="/women" className="hidden sm:inline text-label-caps uppercase fade-underline pb-1">
+          <Link to="/women-wear" className="hidden sm:inline text-label-caps uppercase fade-underline pb-1">
             View All →
           </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
           {[
-            { to: "/women", label: "Women", img: "photo-1483985988355-763728e1935b" },
-            { to: "/men", label: "Men", img: "photo-1520975954732-35dd22299614" },
-            { to: "/kids", label: "Kids", img: "photo-1519238263530-99bdd11df2ea" },
+            { to: "/women-wear", label: "Women Wear", img: "photo-1483985988355-763728e1935b" },
+            { to: "/jewellary", label: "Jewellary", img: "photo-1611085583191-a3b181a88401" },
+            { to: "/handbags", label: "Handbags", img: "photo-1584917865442-de89df76afd3" },
           ].map((c) => (
             <Link key={c.to} to={c.to} className="relative img-hover-zoom rounded-sm aspect-[4/5] block">
               <img
