@@ -22,7 +22,7 @@ export default function WishlistPage() {
       {items.length === 0 ? (
         <div className="py-20 text-center">
           <p className="font-body text-body-lg text-on-surface-variant">Nothing saved yet.</p>
-          <Link to="/women" className="inline-block mt-4 text-label-caps uppercase border-b border-on-surface pb-1">
+          <Link to="/women-wear" className="inline-block mt-4 text-label-caps uppercase border-b border-on-surface pb-1">
             Discover the Collection
           </Link>
         </div>

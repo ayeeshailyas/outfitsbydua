@@ -56,7 +56,7 @@ export default function CartDrawer() {
                 <div className="h-full flex flex-col items-center justify-center text-center gap-4 py-20">
                   <p className="font-body text-body-lg text-on-surface-variant">Your bag is empty.</p>
                   <Link
-                    to="/women"
+                    to="/women-wear"
                     onClick={closeCart}
                     className="text-label-caps uppercase border-b border-on-surface pb-1"
                   >

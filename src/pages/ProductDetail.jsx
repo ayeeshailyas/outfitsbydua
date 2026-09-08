@@ -16,7 +16,6 @@ export default function ProductDetail() {
 
   const [activeImage, setActiveImage] = useState(0);
   const [size, setSize] = useState(product?.sizes?.[0]);
-  const [color, setColor] = useState(product?.colorway);
   const [added, setAdded] = useState(false);
 
   if (!product) {
@@ -35,12 +34,12 @@ export default function ProductDetail() {
   const displayPrice = product.onSale ? product.salePrice : product.price;
 
   const handleAddToCart = () => {
-    addItem(product, { size, color });
+    addItem(product, { size, color: product.colorway });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
 
-  const whatsappMessage = `Hi ${BRAND_NAME}! I'm interested in the ${product.name} (${color}${size ? `, size ${size}` : ""}) — $${displayPrice}. Is it available?`;
+  const whatsappMessage = `Hi ${BRAND_NAME}! I'm interested in the ${product.name} (${product.colorway}${size ? `, size ${size}` : ""}) — $${displayPrice}. Is it available?`;
 
   return (
     <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-14">
@@ -98,23 +97,6 @@ export default function ProductDetail() {
           <p className="font-body text-body-md text-on-surface-variant mt-6 max-w-md leading-relaxed">
             {product.description}
           </p>
-
-          {product.colors?.length > 1 && (
-            <div className="mt-8">
-              <p className="text-label-caps uppercase text-on-surface-variant mb-3">Color — {color}</p>
-              <div className="flex gap-2">
-                {product.colors.map((c) => (
-                  <button
-                    key={c}
-                    onClick={() => setColor(product.colorway)}
-                    aria-label={`Color swatch`}
-                    className="w-8 h-8 rounded-full border-2 border-outline-variant hover:border-on-surface transition-colors"
-                    style={{ backgroundColor: c }}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
 
           {product.sizes?.length > 0 && (
             <div className="mt-8">

@@ -73,17 +73,6 @@ export default function ProductCard({ product }) {
           </div>
         </div>
         <p className="font-body text-label-caps uppercase text-on-surface-variant mt-1">{product.colorway}</p>
-        {product.colors?.length > 1 && (
-          <div className="flex items-center gap-1.5 mt-2">
-            {product.colors.map((c) => (
-              <span
-                key={c}
-                className="w-3.5 h-3.5 rounded-full border border-outline-variant"
-                style={{ backgroundColor: c }}
-              />
-            ))}
-          </div>
-        )}
       </Link>
     </div>
   );

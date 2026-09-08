@@ -52,7 +52,7 @@ export default function Checkout() {
       <div className="max-w-container-max mx-auto px-margin-mobile py-24 text-center">
         <h1 className="font-display text-headline-md">Your bag is empty</h1>
         <p className="font-body text-body-md text-on-surface-variant mt-2">Add something beautiful before checking out.</p>
-        <Link to="/women" className="inline-block mt-6 text-label-caps uppercase border-b border-on-surface pb-1">
+        <Link to="/women-wear" className="inline-block mt-6 text-label-caps uppercase border-b border-on-surface pb-1">
           Continue Shopping
         </Link>
       </div>

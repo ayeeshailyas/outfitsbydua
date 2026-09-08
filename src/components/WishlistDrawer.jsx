@@ -48,7 +48,7 @@ export default function WishlistDrawer() {
               {items.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center gap-4 py-20">
                   <p className="font-body text-body-lg text-on-surface-variant">Your wishlist is empty.</p>
-                  <Link to="/women" onClick={closeWishlist} className="text-label-caps uppercase border-b border-on-surface pb-1">
+                  <Link to="/women-wear" onClick={closeWishlist} className="text-label-caps uppercase border-b border-on-surface pb-1">
                     Discover the Collection
                   </Link>
                 </div>
