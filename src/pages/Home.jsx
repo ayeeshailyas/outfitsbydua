@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[86vh] min-h-[560px] overflow-hidden">
+      <section className="relative h-[86vh] min-h-[680px] overflow-hidden">
         <motion.img
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
