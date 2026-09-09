@@ -19,7 +19,7 @@ export default function Home() {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.6, ease: [0.25, 1, 0.5, 1] }}
-          src="/images/hero-fashion.jpeg"
+          src="/images/hero.png"
           alt="Futsbydua Summer Collection"
           className="absolute inset-0 w-full h-full object-cover object-[center_18%]"
         />
@@ -48,7 +48,7 @@ export default function Home() {
           >
             <Link
               to="/women-wear"
-              className="inline-block mt-8 bg-secondary text-on-secondary rounded-full px-8 py-4 text-label-caps uppercase hover:bg-on-secondary hover:text-secondary transition-colors duration-300"
+              className="inline-block mt-8 bg-[#793e45] text-white rounded-full px-8 py-4 text-label-caps uppercase shadow-[0_8px_20px_rgba(104,45,52,0.24)] hover:bg-[#874f57] hover:shadow-[0_10px_24px_rgba(104,45,52,0.32)] transition-all duration-300"
             >
               Shop Collection
             </Link>
