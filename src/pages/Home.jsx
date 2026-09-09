@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import { products } from "../data/products";
 import ProductCard from "../components/ProductCard";
 
@@ -10,12 +9,7 @@ const fadeUp = {
 };
 
 export default function Home() {
-  const scrollerRef = useRef(null);
   const newArrivals = products.filter((p) => p.isNew).slice(0, 4);
-
-  const scroll = (dir) => {
-    scrollerRef.current?.scrollBy({ left: dir * 340, behavior: "smooth" });
-  };
 
   return (
     <div>
@@ -70,7 +64,7 @@ export default function Home() {
         viewport={{ once: true, margin: "-80px" }}
         className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 md:pt-24"
       >
-        <div className="flex items-end justify-between mb-8">
+        <div className="mb-8">
           <div>
             <h2 className="font-display text-headline-md md:text-3xl">Explore by Category</h2>
             <p className="font-body text-body-md text-on-surface-variant mt-1">Curated essentials for every wardrobe.</p>
@@ -112,75 +106,20 @@ export default function Home() {
             <p className="text-label-caps uppercase text-secondary mb-1">Signature Pieces</p>
             <h2 className="font-display text-headline-md md:text-3xl">Current Obsessions</h2>
           </div>
-          <div className="hidden sm:flex gap-2">
-            <button onClick={() => scroll(-1)} aria-label="Scroll left" className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:border-on-surface transition-colors">←</button>
-            <button onClick={() => scroll(1)} aria-label="Scroll right" className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center">→</button>
-          </div>
         </div>
 
-        <div ref={scrollerRef} className="flex gap-gutter overflow-x-auto no-scrollbar pb-2 snap-x snap-mandatory">
-          {newArrivals.map((p) => (
-            <div key={p.id} className="w-[240px] sm:w-[280px] shrink-0 snap-start">
-              <ProductCard product={p} />
-            </div>
-          ))}
+        <div className="overflow-hidden pb-2">
+          <div className="product-marquee flex w-max gap-gutter hover:[animation-play-state:paused]">
+            {[...newArrivals, ...newArrivals].map((p, index) => (
+              <div key={`${p.id}-${index}`} className="w-[240px] sm:w-[280px] shrink-0">
+                <ProductCard product={p} />
+              </div>
+            ))}
+          </div>
         </div>
       </motion.section>
 
-      {/* Lookbook */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-80px" }}
-        className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-20 md:pt-32 text-center"
-      >
-        <h2 className="font-display text-headline-md md:text-3xl">The Futsbydua Lookbook</h2>
-        <p className="font-body text-body-lg text-on-surface-variant max-w-xl mx-auto mt-4">
-          A curated view into our world. Discover how we style the season's defining pieces across distinct architectural landscapes.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-gutter mt-10">
-          <div className="rounded-sm overflow-hidden aspect-[4/3] sm:aspect-square">
-            <img
-              src="/images/hero-fashion.jpeg"
-              alt="Lookbook editorial"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="grid grid-cols-2 grid-rows-2 gap-gutter aspect-[4/3] sm:aspect-square">
-            <div className="rounded-sm overflow-hidden">
-              <img
-                src="/images/hero-fashion1.jpeg"
-                alt="Detail shot"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-sm overflow-hidden">
-              <img
-                src="/images/hero-fashion.jpeg"
-                alt="Accessory detail"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-sm overflow-hidden">
-              <img
-                src="/images/hero-fashion1.jpeg"
-                alt="Detail shot"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-sm overflow-hidden">
-              <img
-                src="/images/hero-fashion.jpeg"
-                alt="Accessory detail"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-      </motion.section>
+      
 
       {/* Newsletter CTA */}
       <motion.section

@@ -21,6 +21,8 @@ body {
   font-family: "DM Sans", sans-serif;
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
+  zoom: 80%;
+  
 }
 
 ::-webkit-scrollbar {
@@ -78,6 +80,19 @@ body {
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .product-marquee {
+    animation: product-marquee 28s linear infinite;
+  }
+
+  @keyframes product-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 12px));
+    }
   }
 }
 
