@@ -2,6 +2,7 @@ import { AGE_GROUPS } from "../data/products";
 
 export default function Filters({
   subcategories,
+  showAgeGroup,
   activeSubcategories,
   toggleSubcategory,
   activeAgeGroups,
@@ -31,23 +32,25 @@ export default function Filters({
         </div>
       </FilterGroup>
 
-      <FilterGroup title="Age Group">
-        <div className="flex flex-wrap gap-2">
-          {AGE_GROUPS.map((ag) => (
-            <button
-              key={ag.id}
-              onClick={() => toggleAgeGroup(ag.id)}
-              className={`px-4 py-2 rounded-full border text-label-caps uppercase transition-colors duration-300 ${
-                activeAgeGroups.includes(ag.id)
-                  ? "bg-primary text-on-primary border-primary"
-                  : "border-outline-variant text-on-surface-variant hover:border-on-surface"
-              }`}
-            >
-              {ag.label}
-            </button>
-          ))}
-        </div>
-      </FilterGroup>
+      {showAgeGroup && (
+        <FilterGroup title="Age Group">
+          <div className="flex flex-wrap gap-2">
+            {AGE_GROUPS.map((ag) => (
+              <button
+                key={ag.id}
+                onClick={() => toggleAgeGroup(ag.id)}
+                className={`px-4 py-2 rounded-full border text-label-caps uppercase transition-colors duration-300 ${
+                  activeAgeGroups.includes(ag.id)
+                    ? "bg-primary text-on-primary border-primary"
+                    : "border-outline-variant text-on-surface-variant hover:border-on-surface"
+                }`}
+              >
+                {ag.label}
+              </button>
+            ))}
+          </div>
+        </FilterGroup>
+      )}
 
       <FilterGroup title="Price">
         <div className="px-1">

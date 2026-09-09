@@ -32,6 +32,7 @@ export default function CategoryPage({ mode }) {
   const { category } = useParams();
   const activeCategory = mode || category;
   const meta = TITLES[activeCategory] || TITLES["women-wear"];
+  const showAgeGroup = !["jewellary", "handbags"].includes(activeCategory);
 
   const baseProducts = useMemo(() => {
     if (activeCategory === "new-arrivals") return ALL_PRODUCTS.filter((p) => p.isNew);
@@ -72,7 +73,7 @@ export default function CategoryPage({ mode }) {
       const priceVal = p.onSale ? p.salePrice : p.price;
       if (priceVal > priceRange) return false;
       if (activeSubcategories.length && !activeSubcategories.includes(p.subcategory)) return false;
-      if (activeAgeGroups.length && !activeAgeGroups.includes(p.ageGroup)) return false;
+      if (showAgeGroup && activeAgeGroups.length && !activeAgeGroups.includes(p.ageGroup)) return false;
       return true;
     });
 
@@ -81,12 +82,13 @@ export default function CategoryPage({ mode }) {
     if (sort === "newest") list = [...list].sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
 
     return list;
-  }, [baseProducts, activeSubcategories, activeAgeGroups, priceRange, sort]);
+  }, [baseProducts, activeSubcategories, activeAgeGroups, priceRange, showAgeGroup, sort]);
 
   const visible = filtered.slice(0, visibleCount);
 
   const filterProps = {
     subcategories,
+    showAgeGroup,
     activeSubcategories,
     toggleSubcategory,
     activeAgeGroups,
