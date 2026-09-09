@@ -164,7 +164,7 @@ export default function Header() {
                 className="mobile-menu-panel fixed top-0 left-0 bottom-0 w-[82%] max-w-sm z-50 flex flex-col px-margin-mobile py-6 shadow-elevated lg:hidden"
               >
                 <div className="flex items-center justify-between mb-10">
-                  <Logo />
+                  <Logo compact />
                   <button aria-label="Close menu" onClick={() => setMobileOpen(false)} className="w-9 h-9 flex items-center justify-center">
                     <IconClose />
                   </button>
