@@ -30,6 +30,7 @@ export default function ProductDetail() {
   const related = getRelatedProducts(product);
   const wishlisted = isWishlisted(product.id);
   const displayPrice = product.onSale ? product.salePrice : product.price;
+  const hideSizeSelector = ["jewellary", "handbags"].includes(product.category);
 
   const handleAddToCart = () => {
     addItem(product, { size, color: product.colorway });
@@ -77,7 +78,9 @@ export default function ProductDetail() {
             {product.description}
           </p>
 
-          {product.sizes?.length > 0 && (
+          {hideSizeSelector ? (
+            <div className="mt-8 h-20" aria-hidden="true" />
+          ) : product.sizes?.length > 0 ? (
             <div className="mt-8">
               <div className="flex items-center justify-between mb-3">
                 <p className="text-label-caps uppercase text-on-surface-variant">Size</p>
@@ -99,7 +102,7 @@ export default function ProductDetail() {
                 ))}
               </div>
             </div>
-          )}
+          ) : null}
 
           <div className="flex flex-col gap-3 mt-10">
             <button

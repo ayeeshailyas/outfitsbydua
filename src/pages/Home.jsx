@@ -48,7 +48,7 @@ export default function Home() {
           >
             <Link
               to="/women-wear"
-              className="inline-block mt-8 bg-[#f6f8f8] font-bold text-black rounded-full px-8 py-4 text-label-caps uppercase shadow-[0_8px_20px_rgba(104,45,52,0.24)] hover:bg-[#874f57] hover:bg-[#793e45] transition-all duration-300"
+              className="inline-block mt-8 bg-[#f6f8f8] font-bold text-black rounded-full px-8 py-4 text-label-caps uppercase shadow-[0_8px_20px_rgba(104,45,52,0.24)] hover:bg-[#e0e4e4] transition-all duration-300"
             >
               Shop Collection
             </Link>
